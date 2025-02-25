@@ -1,0 +1,265 @@
+<!-- Editar index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <!-- Adicionar cdn de ícones bootstrap (veja na descrição) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Adicionar arquivo style.css -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src='scriptColors.js' type='text/javascript' defer></script>
+  <script src='scriptClipboard.js' type='module' defer></script>
+  <script src="scriptIndex.js" type="module" defer></script>
+  <title>Página inicial</title>
+  <style>
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #212429;
+    }
+
+    .loading div {
+      display: flex;
+      gap: 20px;
+    }
+
+    .loading div div {
+      width: 20px;
+      height: 20px;
+      background-color: #3498db;
+      border-radius: 50%;
+      animation: bounce 0.6s infinite alternate;
+    }
+
+    .loading div div:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .loading div div:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes bounce {
+      to {
+        transform: translateY(-30px);
+      }
+    }
+  </style>
+</head>
+
+<body id="body" class="loading">
+  <div id="divLoading">
+    <div id='d1'></div>
+    <div id='d2'></div>
+    <div id='d3'></div>
+  </div>
+  <!-- 
+  myHeader
+  -->
+  <header id="myHeader" style='display: none'> <!-- cabeçalho -->
+    <!-- botão para retrair ou expandir o menu esquerdo-->
+    <button id="btMenuLeft" class='buttonT btHeader' type="button" title="Menu">
+      <i class="bi bi-layout-sidebar-inset"></i> <!-- ícone importado do bootstrap -->
+    </button>
+    <a id="aHome" href="index.html">
+      <img src="/Imagens/logo1.jpg" class='logo' />
+    </a>
+    <p>Forbys</p>
+    <!-- Botão para entrar no perfil -->
+    <button id="btLogin" class='buttonT btColumn' type='button' title='Entrar' onclick="location.href='login.html';">
+      <i class="bi bi-person-up"></i><!-- ícone importado do bootstrap -->
+      <span>Entrar</span>
+    </button>
+    <!-- botão para retrair ou expandir o menu direito-->
+    <button id="btMenuRight" class='buttonT btHeader' type="button" title="Menu">
+      <i class="bi bi-chat-right-heart"></i>
+    </button>
+  </header>
+  <div id="myDivContainer" style='display: none'> <!-- Container que receberá os menus e a área de conteúdo -->
+    <!--
+    myDivLeft
+    -->
+    <div id="myDivLeft" class="divMenu"> <!-- menu esquerdo -->
+      <div id="divTopMenuL" class="divChildTop">
+        <h1></h1>
+        <button id="btColseMl" class="buttonS btClose"><i class="bi bi-x"></i></button>
+      </div>
+      <button id="btOpenL1" class="buttonT btMenu"><i class="bi bi-paperclip"></i><span>Nossos serviços</span></button>
+      <button id="btOpenL2" class="buttonT btMenu"><i class="bi bi-bag-check"></i><span>Nossos planos</span></button>
+      <button id="btOpenL3" class="buttonT btMenu"><i class="bi bi-person-hearts"></i><span>Nossos
+          parceiros</span></button>
+      <button id="btOpenL4" class="buttonT btMenu"><i class="bi bi-person-hearts"></i><span>Preferências</span></button>
+    </div>
+    <!--
+    myDivCenter
+    -->
+    <div id="myDivCenter"><!-- área de conteúdo -->
+      <!--
+      panelHome
+      -->
+      <div id="dHome" class="divCenterContent">
+        <!-- <div class="divChildTop">
+          <h1>Forbys <span>forever by your side.</span></h1>
+        </div> -->
+        <div id='d1_dHome' class="divChildCenter">
+          <p id="p1_d1_dHome">Imagine poder transmitir a memória dos seus antepassados aos filhos, netos, bisnetos...
+          </p>
+          <div>
+            <p>Eternize seus momentos mais importantes!</p>
+            <p>Ainda não tem um conta?</p>
+            <button id="btSignUp" class='buttonS' type='button' title='Create Profile'
+              onclick="location.href='registro.html';">
+              <i class="bi bi-person-plus"></i><!-- ícone importado do bootstrap -->
+              <span>Inscreva-se</span>
+            </button>
+          </div>
+          <p id="p2_d1_dHome">
+            <i class="bi bi-lightbulb"></i>
+            <span> Nossa plataforma oferece um espaço onde as memórias podem ser preservadas, através de fotos, vídeos e
+              depoimentos. </span>
+          </p>
+        </div>
+        <div id='d2_dHome' class="divChildCenter">
+          <p class="pInfo">
+            <i class="bi bi-person-vcard"></i>
+            <a href="login.html">Crie uma página de memória e mantenha viva uma história!</a>
+          </p>
+          <p class="pInfo">
+            <i class="bi bi-qr-code"></i>
+            <a href="login.html">Confeccione uma placa QR code com o link da página dedicada!</a>
+          </p>
+          <p class="pInfo">
+            <i class="bi bi-diagram-3"></i>
+            <a href="login.html">Edite uma árvore genealógica para registrar a origem e o legado!</a>
+          </p>
+          <p class="pInfo">
+            <i class="bi bi-envelope-paper-heart"></i>
+            <a href="login.html">Registre mensagens, depoimentos e histórias no memorial!</a>
+          </p>
+        </div>
+        <div id='d3_dHome' class="divChildCenter">
+          <p> Consiga todo apoio necessário nos momentos de maior necessidade com nossos parceiros! </p>
+          <button class="bt_Container">
+            <i class="bi bi-wechat"></i>
+            <span>Apoio psicológico</span>
+          </button>
+          <button class="bt_Container">
+            <i class="bi bi-umbrella"></i>
+            <span>Assistência funeral</span>
+          </button>
+          <button class="bt_Container">
+            <i class="bi bi-journal-plus"></i>
+            <span>Planos funerários</span>
+          </button>
+          <button class="bt_Container">
+            <i class="bi bi-shield-plus"></i>
+            <span>Seguro de vida</span>
+          </button>
+        </div>
+      </div>
+      <div id="panelL1" class="divCenterContent panelMenu">
+        <div class="divChildTop">
+          <h1>Nossos serviços</h1>
+          <button id="btColseL1" class="buttonS btClose"><i class="bi bi-x"></i></button>
+        </div>
+      </div>
+      <div id="panelL2" class="divCenterContent panelMenu">
+        <div class="divChildTop">
+          <h1>Nossos Planos</h1>
+          <button id="btColseL2" class="buttonS btClose"><i class="bi bi-x"></i></button>
+        </div>
+      </div>
+      <div id="panelL3" class="divCenterContent panelMenu">
+        <div class="divChildTop">
+          <h1>Nossos parceiros</h1>
+          <button id="btColseL3" class="buttonS btClose"><i class="bi bi-x"></i></button>
+        </div>
+      </div>
+      <div id="panelL4" class="divCenterContent panelMenu">
+        <div class="divChildTop">
+          <h1>Preferências</h1>
+          <button id="btColseL4" class="buttonS btClose"><i class="bi bi-x"></i></button>
+        </div>
+        <form id="themeUserForm" class="formColumn">
+          <p>Escolha seu tema:</p>
+          <label><input type="radio" name="options" value="dark"> Dark</label>
+          <label><input type="radio" name="options" value="light"> Light</label>
+          <label><input type="radio" name="options" value="solid_dark"> Solid dark</label>
+          <label><input type="radio" name="options" value="solid_light"> Solid Light</label>
+        </form>
+      </div>
+    </div>
+    <!--
+    myDivRight
+    -->
+    <div id="myDivRight" class="divMenu"><!-- menu direito -->
+      <div id="divTopMenuR" class="divChildTop">
+        <button id="btColseMr" class="buttonS btClose"><i class="bi bi-x"></i></button>
+        <h1></h1>
+      </div>
+      <div class='buttonT btMenu'>
+        <i class="bi bi-facebook"></i>
+        <!--target="_blank": abrir em uma nova guia-->
+        <a href=' https://www.facebook.com/login/' target="_blank">/forbysoficial</a>
+        <button class='btClipboard' title='copiar' value='/forbysoficial'>
+          <i class="bi bi-files"></i>
+        </button>
+      </div>
+      <div class='buttonT btMenu'>
+        <i class="bi bi-instagram"></i>
+        <a href=' https://www.instagram.com/accounts/login/' target='_blank'>@forbysoficial</a>
+        <button class='btClipboard' title='copiar' value='@forbysoficial'>
+          <i class="bi bi-files"></i>
+        </button>
+      </div>
+      <div class='buttonT btMenu'>
+        <i class="bi bi-youtube"></i>
+        <a href=' https://www.youtube.com/' target='_blank'>Forbys oficial</a>
+        <button class='btClipboard' title='copiar' value='Forbys oficial'>
+          <i class="bi bi-files"></i>
+        </button>
+      </div>
+      <div class='buttonT btMenu'>
+        <i class="bi bi-linkedin"></i>
+        <a href=' https://www.linkedin.com/company/login/' target='_blank'>Forbys oficial</a>
+        <button class='btClipboard' title='copiar' value='Forbys oficial'>
+          <i class="bi bi-files"></i>
+        </button>
+      </div>
+      <div class='buttonT btMenu'>
+        <i class="bi bi-whatsapp"></i>
+        <a href='https://web.whatsapp.com/' target='_blank'>+55 (81) 98858-4789</a>
+        <button class='btClipboard' title='copiar' value='+55 (81) 98858-4789'>
+          <i class="bi bi-files"></i>
+        </button>
+      </div>
+      <div class='buttonT btMenu'>
+        <i class="bi bi-telegram"></i>
+        <a href='https://web.telegram.org/' target='_blank'>+55 (81) 98858-4789</a>
+        <button class='btClipboard' title='copiar' value='+55 (81) 98858-4789'>
+          <i class="bi bi-files"></i>
+        </button>
+      </div>
+      <div class='buttonT btMenu'>
+        <i class="bi bi-envelope"></i>
+        <a href='https://mail.google.com/' target='_blank' title="forbysmemories@gmail.com">
+          <span id="prefixo">forbysmemories</span>
+          <span id="sufixo">@gmail.com</span></a>
+        <button class='btClipboard' title='copiar' value='forbysmemories@gmail.com'>
+          <i class="bi bi-files"></i>
+        </button>
+
+      </div>
+    </div>
+  </div>
+  <footer id="myFooter" style='display: none'>&copy Amigos Lisos, uma empresa do grupo Sem Grana</footer>
+  <!-- rodapé -->
+</body>
+
+</html>

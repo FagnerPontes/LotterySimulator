@@ -1,0 +1,169 @@
+<!-- Editar index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Adicionar cdn de ícones bootstrap (veja na descrição) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Adicionar arquivo style.css -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- Adicionar arquivo _scriptStrings.js -->
+  <script src='scriptColors.js' type='text/javascript' defer></script>
+  <script src="scriptPage.js" type="module" defer></script>
+  <title>User page</title>
+  <style>
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #212429;
+    }
+
+    .loading div {
+      display: flex;
+      gap: 20px;
+    }
+
+    .loading div div {
+      width: 20px;
+      height: 20px;
+      background-color: #3498db;
+      border-radius: 50%;
+      animation: bounce 0.6s infinite alternate;
+    }
+
+    .loading div div:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .loading div div:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes bounce {
+      to {
+        transform: translateY(-30px);
+      }
+    }
+  </style>
+</head>
+
+<body id="body" class="loading">
+  <div id="divLoading">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <header id="myHeader" style='display: none'> <!-- cabeçalho -->
+    <!-- botão para retrair ou expandir o menu esquerdo-->
+    <button id="buttonUser" class='button' type="button" title="User menu">
+      <img id="imgUser" src="/Imagens/Arvore_user.jpg" />
+    </button>
+    <button id="buttonHome" type="button" title="bHome">Forbys.</button>
+    <p id='pHeader'></p>
+    <!-- Botão para sair do perfil -->
+    <button id="buttonSair" class='buttonHeader' type='button' title='Sair'">
+      <i class=" bi bi-person-down"></i>
+      <span>Sair</span>
+    </button>
+    <!-- botão para retrair ou expandir o menu direito-->
+    <button id="buttonMenuRight" type="button" title="Menu right">
+      <i class="bi bi-layout-sidebar-inset-reverse"></i>
+    </button>
+  </header>
+  <div id="myDivContainer" style='display: none'> <!-- Container que receberá os menus e a área de conteúdo -->
+    <!-- 
+    myDivLeft
+    -->
+    <div id="myDivLeft" class="divMenu"> <!-- menu esquerdo -->
+      <button id="btOpenL1" class='btMenu'><i class="bi bi-person-check"></i><span>Perfil</span></button>
+      <button id="btOpenL2" class='btMenu'><i class="bi bi-bag-check"></i><span>Meu Planos</span></button>
+      <button id="btOpenL3" class='btMenu'><i class="bi bi-gear"></i><span>Configuraçõeso</span></button>
+    </div>
+    <!-- 
+    myDivCenter
+    -->
+    <div id="myDivCenter"><!-- área de conteúdo -->
+      <div id="panelHome" class="divCenterContent">
+        <div class="divChildTop">
+          <h1>Apresentação</h1>
+        </div>
+      </div>
+      <!-- 
+      panelL1
+      -->
+      <div id="panelL1" class="divCenterContent perfil">
+        <div class="divChildTop">
+          <h1>Perfil</h1>
+          <button id="btColseL1"><i class="bi bi-x"></i></button>
+        </div>
+        <form id="imgUserForm">
+          <p>Escolha sua imagem do perfil:</p>
+          <img id="imgUpload" src="/Imagens/Arvore_user.jpg" />
+          <label for="inputUploadImage" class="custom-button">Escolher arquivo</label>
+          <input type="file" id="inputUploadImage" accept="image/*">
+          <button id='btUploadImage'>Enviar Imagem</button>
+        </form>
+        <form id="themeUserForm">
+          <p>Escolha seu tema:</p>
+          <label><input type="radio" name="options" value="dark"> Dark</label>
+          <label><input type="radio" name="options" value="light"> Light</label>
+          <label><input type="radio" name="options" value="solid_dark"> Solid dark</label>
+          <label><input type="radio" name="options" value="solid_light"> Solid Light</label>
+        </form>
+      </div>
+      <!-- 
+      panelL2
+      -->
+      <div id="panelL2" class="divCenterContent">
+        <div class="divChildTop">
+          <h1>Meu Planos</h1>
+          <button id="btColseL2"><i class="bi bi-x"></i></button>
+        </div>
+      </div>
+      <!-- 
+      panelL3
+      -->
+      <div id="panelL3" class="divCenterContent">
+        <div class="divChildTop">
+          <h1>Configurações</h1>
+          <button id="btColseL3"><i class="bi bi-x"></i></button>
+        </div>
+      </div>
+      <div id="panelR1" class="divCenterContent">
+        <div class="divChildTop">
+          <h1>Seja um parceiro</h1>
+          <button id="btColseR1"><i class="bi bi-x"></i></button>
+        </div>
+      </div>
+      <div id="panelR2" class="divCenterContent">
+        <div class="divChildTop">
+          <h1>Entre em contato</h1>
+          <button id="btColseR2"><i class="bi bi-x"></i></button>
+        </div>
+      </div>
+      <div id="panelR3" class="divCenterContent">
+        <div class="divChildTop">
+          <h1>Configurações</h1>
+          <button id="btColseR3"><i class="bi bi-x"></i></button>
+        </div>
+      </div>
+    </div>
+    <!-- 
+    myDivRight
+    -->
+    <div id="myDivRight" class="divMenu"><!-- menu direito -->
+      <button id="btOpenR1" class='btMenu'><i class="bi bi-paperclip"></i><span>Nossos serviços</span></button>
+      <button id="btOpenR2" class='btMenu'><i class="bi bi-person-hearts"></i><span>Seja um parceiro</span></button>
+      <button id="btOpenR3" class='btMenu'><i class="bi bi-envelope-arrow-up"></i><span>Entre em contato</span></button>
+    </div>
+  </div>
+  <footer id="myFooter" style='display: none'>&copy Amigos Lisos, uma empresa do grupo Sem Grana</footer>
+  <!-- rodapé -->
+</body>
+
+</html>

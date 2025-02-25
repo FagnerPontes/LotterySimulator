@@ -1,0 +1,1018 @@
+/* Editar style.css */
+
+/* |-VARIÁVEIS*/
+:root {
+  /*propriedades editadas no scriptTheme*/
+  --backColor1: none;
+  --backColor2: none;
+  --backColor3: none;
+  --backColor4: none;
+  --backColor1t: none;
+  --backColor2t: none;
+  --backColor1s: none;
+  --backColor2s: none;
+  --buttonColor1: none;
+  --buttonColor2: none;
+  --buttonColor3: none;
+  --fontColor1: none;
+  --fontColor2: none;
+  --fontColor3: none;
+  --fontColor4: none;
+  --fontColor5: none;
+  --aColor: none;
+  --backgroundImage: none;
+  --backgroundImage2: none;
+  --backgroundImage3: none;
+  --backgroundImageHeader: none;
+
+  /*propriedades NÃO editadas no scriptTheme*/
+  --fontSizeRoot1: 14px;
+  --headerHeigth: 6rem;
+  --footerHeight: 2rem;
+  --menuButtonHeight: 4rem;
+  --iconSize: 3.5rem;
+  --bodyHeight: none;
+  --mobileHeight: 100vh;
+  --d1_dHomeHeight: none;
+  /*propriedade para animação dos menus*/
+  --menuWidth: 18rem;
+}
+
+/* |-Reset */
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Helvetica, sans-serif;
+}
+
+html {
+  font-size: var(--fontSizeRoot1);
+  color: var(--fontColor1);
+}
+
+/* |-.body */
+.body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #212429;
+
+}
+
+.backImage {
+  position: fixed;
+  min-height: 100vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--backgroundImage);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  z-index: -1000;
+}
+
+/* |-myHeader */
+#myHeader {
+  /* display: flex; será definido após o carregamento da página*/
+  align-items: center;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  overflow-y: hidden;
+}
+
+#myHeader #aHome {
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  border: 2px solid var(--backColor1t);
+  background-color: var(--backColor1t);
+  font-size: 2rem;
+  color: var(--fontColor1);
+  cursor: pointer;
+  margin: .5rem;
+}
+
+.logo {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+}
+
+#myHeader p {
+  flex: 1;
+  font-family: "Monotype Corsiva", cursive;
+  font-size: 3rem;
+}
+
+/* |-myFooter */
+#myFooter {
+  /* height: calc(var(--footerHeight) + env(safe-area-inset-bottom)); */
+  height: var(--footerHeight);
+  min-height: var(--footerHeight);
+  max-height: var(--footerHeight);
+
+  /* display: flex; será definido após o carregamento da página*/
+  justify-content: center;
+  align-items: center;
+  font-size: .8rem;
+  color: var(--fontColor1);
+}
+
+/* |-myDivContainer */
+#myDivContainer {
+  border-top: 1px solid var(--fontColor5);
+  border-bottom: 1px solid var(--fontColor5);
+  /* display: flex; será definido após o carregamento da página*/
+  /*flex-direction: será definido no @media (Responsividade)*/
+}
+
+/* |-myDivLeft */
+#myDivLeft {
+  z-index: 2;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+  /*width: -> largura será manipulada pelo scriptMenuAnimation.js*/
+}
+
+
+/* |-MyDivCenter */
+#myDivCenter {
+  display: flex;
+  color: var(--fontColor1);
+}
+
+#myDivCenter .divCenterContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.divChildTop {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  padding: .5rem;
+  border-bottom: 1px solid var(--fontColor5);
+  align-items: center;
+}
+
+.divChildTop h1 {
+  text-align: left;
+  font-size: 1.5rem;
+  flex: 1;
+}
+
+/* |-myDivRight */
+#myDivRight {
+  z-index: 2;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--fontColor1);
+  /*width: -> largura será manipulada pelo scriptMenuAnimation.js*/
+}
+
+#myDivRight .btMenu a {
+  color: var(--fontColor2);
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#myDivRight .btMenu a #prefixo {
+  max-width: fit-content;
+}
+
+#myDivRight .btMenu a #sufixo {
+  flex: 1;
+}
+
+#myDivRight .btMenu a:hover {
+  text-decoration: underline;
+}
+
+#myDivRight .btMenu .btClipboard {
+  margin-right: .5rem;
+  width: 2rem;
+  height: 2.5rem;
+  background-color: #00000000;
+  border-radius: 10px;
+}
+
+#myDivRight .btMenu .btClipboard i {
+  color: var(--fontColor4);
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+#myDivRight .btMenu .btClipboard i:hover {
+  color: var(--fontColor1);
+}
+
+/* |-divFormParent */
+#divFormParent {
+  height: 100vh;
+  /* display: flex; será definido após o carregamento da página*/
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--backColor2);
+  color: var(--fontColor1);
+}
+
+#divFormParent form {
+  position: relative;
+  display: block;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  border-radius: 10px;
+  overflow-y: auto;
+  background-color: var(--backColor1);
+  max-height: 90%;
+}
+
+#divFormParent form h1 {
+  display: flex;
+  font-size: 2rem;
+  align-items: center;
+  height: var(--headerHeigth);
+  margin-bottom: .5rem;
+}
+
+#divFormParent form h1 span {
+  flex: 1;
+}
+
+#divFormParent form p {
+  width: 100%;
+  height: 1.8rem;
+  flex: 1;
+  line-height: 1.8rem;
+  display: flex;
+}
+
+#divFormParent form p span {
+  flex: 1;
+  text-align: right;
+  color: var(--fontColor1);
+}
+
+#divFormParent form input {
+  width: 100%;
+  flex: 1;
+  margin-bottom: .8rem;
+  border-radius: 8px;
+  padding-left: .5rem;
+  background-color: var(--backColor4);
+  border: 1px solid var(--fontColor1);
+  color: var(--fontColor1)
+}
+
+#divFormParent form>button {
+  margin-top: 1rem;
+  width: 100%;
+  height: 3rem;
+  flex: 1;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--backColor2t);
+  background-color: var(--buttonColor2);
+  color: var(--fontColor1);
+  font-size: 2rem;
+}
+
+#divFormParent form>button:hover {
+  border: 1px solid var(--fontColor1);
+  background-color: var(--buttonColor1);
+}
+
+#divFormParent form>button:active {
+  border: 1px solid var(--fontColor1);
+  background-color: var(--buttonColor3);
+  color: var(--fontColor2);
+}
+
+#divFormParent form>#loginGoogleButton {
+  margin-bottom: 2rem;
+}
+
+#divFormParent form p a {
+  text-decoration: none;
+  color: var(--aColor);
+}
+
+#divFormParent form p a:hover {
+  text-decoration: underline;
+}
+
+#divConcluido {
+  flex-direction: column;
+  align-items: center;
+  line-height: 3rem;
+}
+
+#divConcluido p a {
+  text-decoration: none;
+  color: var(--aColor);
+}
+
+#divConcluido p a:hover {
+  text-decoration: underline;
+}
+
+#divFormParent form p>.error {
+  color: var(--aColor);
+  font-weight: 600;
+}
+
+.buttonT {
+  background-color: #00000000;
+  border: 1px solid #00000000;
+  color: var(--fontColor2);
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.buttonT:hover {
+  background-color: var(--backColor3);
+  border: 1px solid var(--fontColor2);
+}
+
+.buttonT:active {
+  background-color: var(--backColor4);
+}
+
+.buttonT i {
+  color: var(--fontColor1);
+}
+
+.buttonS {
+  background-color: var(--backColor2s);
+  border: 1px solid var(--backColor2s);
+  color: var(--fontColor2);
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.buttonS:hover {
+  background-color: var(--backColor3);
+  border: 1px solid var(--fontColor2);
+}
+
+.buttonS:active {
+  background-color: var(--backColor4);
+}
+
+.buttonS i {
+  color: var(--fontColor1);
+}
+
+.btMenu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: .25rem;
+  height: var(--menuButtonHeight);
+  font-size: 1.0rem;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.btMenu i {
+  font-size: 1.5rem;
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+
+.btMenu span {
+  display: flex;
+  flex: 1;
+  justify-content: left;
+  text-align: left;
+}
+
+/* |- Botões Texto abaixo do ícone */
+.btColumn {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btColumn i {
+  line-height: 2.5rem;
+  font-size: 2rem;
+}
+
+.btColumn span {
+  font-size: .8rem;
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+.btHeader {
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  margin: .1rem;
+  font-size: 2rem;
+}
+
+.btClose {
+  height: 2rem;
+  min-height: 2rem;
+  max-height: 2rem;
+  width: 2rem;
+  min-width: 2rem;
+  max-width: 2rem;
+  border-radius: 50%;
+}
+
+.btClose i {
+  font-size: 1.5rem;
+}
+
+.bt_Container {
+  padding-left: 1rem;
+  display: flex;
+  height: 5rem;
+  flex-direction: row;
+  width: 20rem;
+  font-size: 1.5rem;
+  border-radius: 2.5rem;
+  align-items: center;
+  text-align: left;
+  margin-top: 1rem;
+  background-color: #05090d;
+  transition: background-color .3s ease;
+}
+
+.bt_Container:hover {
+  background-color: #313439;
+}
+
+.bt_Container:active {
+  background-color: #818489;
+}
+
+.bt_Container i {
+  font-size: 3.5rem;
+  color: #d1d6dd;
+}
+
+.bt_Container span {
+  padding-left: .5rem;
+  color: #d1d6dd;
+  flex: 1;
+}
+
+/*----------------------------------*/
+/*|-RESPONSIVIDADE*/
+/*----------------------------------*/
+
+/*|- - MOBILE (width < 600)*/
+@media only screen and (max-width: 599px) {
+
+  /* |- - - body */
+  body {
+    min-height: 100vh;
+  }
+
+  /* |- - - myHeader */
+  #myHeader {
+    position: sticky;
+    top: 0;
+    background-color: var(--backColor1s);
+    height: var(--headerHeigth);
+    overflow: hidden;
+    transition: height .3s ease;
+  }
+
+  /* |- - - myDivContainer */
+  #myDivContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* |- - - myFooter */
+  #myFooter {
+    background-color: var(--backColor1s);
+  }
+
+  /* |- - - myDivLeft */
+  #myDivLeft {
+    position: fixed;
+    padding-bottom: 1rem;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--backColor2s);
+  }
+
+  #myDivLeft button {
+    width: calc(100vw - 2rem);
+  }
+
+  /* |- - - myDivCenter */
+  #myDivCenter {
+    background-color: var(--backColor1);
+  }
+
+  #myDivCenter .divCenterContent {
+    min-height: calc(100vh - var(--footerHeight));
+    flex: 1;
+  }
+
+  .panelMenu {
+    background-color: var(--backColor2s);
+  }
+
+  /* |- - - myDivRight */
+  #myDivRight {
+    position: fixed;
+    padding-bottom: 1rem;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--backColor2s);
+  }
+
+  #myDivRight button {
+    width: calc(100vw - 2rem);
+  }
+
+  #myDivRight .btMenu {
+    width: calc(100vw - 2rem);
+  }
+
+  /* |- - - divFormParent */
+  #divFormParent form {
+    width: 100%;
+  }
+
+  #divFormParent form input {
+    height: 3rem;
+    line-height: 3rem;
+  }
+
+  #d1_dHome {
+    /* padding-top: var(--headerHeigth); */
+    min-height: calc(var(--d1_dHomeHeight) - 6rem);
+  }
+
+  #d2_dHome {
+    min-height: var(--mobileHeight);
+  }
+
+  #d3_dHome {
+    min-height: calc(var(--mobileHeight) - var(--footerHeight));
+  }
+
+}
+
+/* |- - MONITOR (width > 600)*/
+@media only screen and (min-width: 600px) {
+
+  /* |- - - body */
+  body {
+    height: 100vh;
+  }
+
+  #divTopMenuL,
+  #divTopMenuR {
+    display: none;
+  }
+
+  /* |- - - myHeader */
+  #myHeader {
+    height: var(--headerHeigth);
+    background-color: var(--backColor1);
+  }
+
+  /* |- - - myDivContainer */
+  #myDivContainer {
+    flex-direction: row;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  /* |- - - myFooter */
+  #myFooter {
+    background-color: var(--backColor1);
+  }
+
+
+  /* |- - - myDivLeft */
+  #myDivLeft {
+    border-right: 1px solid var(--fontColor5);
+    padding-bottom: 1rem;
+    background-color: var(--backColor2);
+  }
+
+  #myDivLeft button {
+    width: calc(var(--menuWidth) - 2rem);
+  }
+
+  /* |- - - myDivCenter */
+  #myDivCenter {
+    background-color: var(--backColor1);
+    min-width: 0rem;
+    overflow: auto;
+    flex: 1;
+  }
+
+  #myDivCenter .divCenterContent {
+    height: 100%;
+    min-width: 100%;
+    /* background-color: var(--backColor1); */
+    /* border-radius: 8px; */
+    flex: 1;
+  }
+
+  .panelMenu {
+    background-color: var(--backColor2s);
+  }
+
+  /* |- - - myDivRight */
+  #myDivRight {
+    border-left: 1px solid var(--fontColor5);
+    padding-bottom: 1rem;
+    background-color: var(--backColor2);
+  }
+
+  #myDivRight button {
+    width: calc(var(--menuWidth) - 2rem);
+  }
+
+  #myDivRight .btMenu {
+    width: calc(var(--menuWidth) - 2rem);
+  }
+
+  /* |- - - divFormParent */
+  #divFormParent form {
+    width: 25rem;
+    border: 1px solid var(--backColor2t);
+  }
+
+  #divFormParent form input {
+    height: 2rem;
+    line-height: 2rem;
+  }
+
+  #d1_dHome {
+    min-height: calc(var(--mobileHeight) - var(--headerHeigth) - var(--footerHeight));
+  }
+
+  #d2_dHome {
+    min-height: calc(var(--mobileHeight) - var(--headerHeigth) - var(--footerHeight));
+  }
+
+  #d3_dHome {
+    min-height: calc(var(--mobileHeight) - var(--headerHeigth) - var(--footerHeight));
+  }
+}
+
+/*---------------------------------*/
+/*|- ANIMAÇÃO DOS MENUS.css*/
+/*---------------------------------*/
+
+/*largura para quando o menu for aberto*/
+.open {
+  width: var(--menuWidth);
+}
+
+/*largura para quando o menu for fechado*/
+.close {
+  width: 0;
+}
+
+/*propriedades da animação para quando o menu for aberto*/
+.openDivMenu {
+  animation-name: slideInMenu;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+/*propriedades da animação para quando o menu for fechado*/
+.closeDivMenu {
+  animation-name: slideOutMenu;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+/*animação para abrir o menu*/
+@keyframes slideInMenu {
+  0% {
+    /*início da animação*/
+    width: 0;
+  }
+
+  100% {
+    /*fim da animação*/
+    width: var(--menuWidth);
+  }
+}
+
+/*animação para fechar o menu*/
+@keyframes slideOutMenu {
+  from {
+    /*início da animação*/
+    width: var(--menuWidth);
+  }
+
+  to {
+    /*fim da animação*/
+    width: 0;
+  }
+}
+
+/* ------------------------------------------ */
+/* |- ELEMENTOS CRIADOS POR JS*/
+/* ------------------------------------------ */
+
+#dHome {
+  flex-direction: column;
+}
+
+#dHome .divChildCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#d1_dHome {
+  background-image: var(--backgroundImage2);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* min-height -> editado no .divChildCenter @media */
+}
+
+#p1_d1_dHome {
+  margin-top: 1rem;
+  text-align: center;
+  max-width: 36rem;
+  min-width: 18rem;
+  color: black;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 1);
+}
+
+#d1_dHome div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: auto;
+  margin-bottom: auto; */
+
+}
+
+#d1_dHome div p {
+  margin-top: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  line-height: 1.5rem;
+  font-size: 1.5rem;
+  color: black;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 1);
+}
+
+#btSignUp {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+  height: 3rem;
+  padding-right: .5rem;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  align-items: center;
+  color: var(--fontColor1);
+  background-color: var(--backColor2);
+  transition: background-color .3s ease;
+}
+
+#btSignUp i {
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+
+#btSignUp:hover {
+  background-color: var(--backColor3);
+}
+
+#btSignUp:active {
+  background-color: var(--backColor4);
+}
+
+#p2_d1_dHome {
+  padding-left: .5rem;
+  padding-right: .5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  max-width: 36rem;
+  min-width: 18rem;
+  color: black;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 1);
+}
+
+#p2_d1_dHome span {
+  padding-left: .5rem;
+}
+
+#p2_d1_dHome i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 4rem;
+  font-size: 5rem;
+  color: #cccc00;
+}
+
+#d2_dHome {
+  flex-grow: 1;
+  /* min-height -> editado no @media */
+}
+
+#d2_dHome .pInfo {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  min-height: 7rem;
+  font-size: 1.25rem;
+  align-items: center;
+  max-width: 36rem;
+  min-width: 18rem;
+  background-color: var(--backColor1t);
+}
+
+#d2_dHome .pInfo i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 6rem;
+  width: 6rem;
+  font-size: 5rem;
+  color: var(--fontColor2);
+}
+
+#d2_dHome .pInfo a {
+  color: var(--fontColor1);
+  font-weight: 600;
+  padding-left: 1rem;
+  flex: 1;
+}
+
+#d2_dHome .pInfo a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#d3_dHome {
+  background-image: var(--backgroundImage3);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* min-height -> editado no @media */
+}
+
+#d3_dHome p {
+  margin-top: 2.5rem;
+  line-height: 2rem;
+  font-size: 1.7rem;
+  max-width: 36rem;
+  text-align: center;
+  color: #6edff6;
+}
+
+#panel5 {
+  flex-direction: column;
+}
+
+#panel5 form {
+  margin-top: .5rem;
+  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+  line-height: 2rem;
+  border-radius: 8px
+}
+
+#panel5 form input {
+  margin-left: 1rem;
+}
+
+.perfil {
+  flex-direction: column;
+  align-items: center;
+}
+
+.perfil #imgUserForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: .5rem;
+  padding: .5rem;
+  display: flex;
+  line-height: 2rem;
+}
+
+.perfil #imgUserForm img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 8px solid var(--backColor3);
+}
+
+.perfil #imgUserForm label {
+  color: var(--aColor);
+  margin-top: .5rem;
+}
+
+.perfil #imgUserForm label:hover {
+  text-decoration: underline;
+}
+
+.perfil #imgUserForm input {
+  display: none;
+}
+
+.perfil #imgUserForm button {
+  margin-top: .5rem;
+  width: 8rem;
+  height: 2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid var(--fontColor1);
+}
+
+#buttonUser img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  border: 2px solid var(--backColor3);
+}
+
+.perfil #themeUserForm {
+  margin-top: 2rem;
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--fontColor1);
+}
+
+.perfil #themeUserForm input {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.formColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: .5rem;
+  line-height: 3rem;
+}
+
+.formColumn p {
+  padding: 1rem;
+  width: 100%;
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+}
+
+.formColumn label {
+  padding-left: 2rem;
+  width: 100%;
+}

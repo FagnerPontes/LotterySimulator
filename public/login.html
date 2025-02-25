@@ -1,0 +1,76 @@
+<!-- Editar login.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Adicionar cdn de ícones bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- Adicionar arquivo _scriptStrings.js -->
+  <script src='scriptStrings.js' type='text/javascript' defer></script>
+  <script src='scriptColors.js' type='text/javascript' defer></script>
+  <script src='scriptLogin.js' type="module" defer></script>
+  <title>Login</title>
+  <style>
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #212429;
+    }
+
+    .loading div {
+      display: flex;
+      gap: 20px;
+    }
+
+    .loading div div {
+      width: 20px;
+      height: 20px;
+      background-color: #3498db;
+      border-radius: 50%;
+      animation: bounce 0.6s infinite alternate;
+    }
+
+    .loading div div:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .loading div div:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes bounce {
+      to {
+        transform: translateY(-30px);
+      }
+    }
+  </style>
+</head>
+
+<body id="body" class="loading">
+  <div id="divLoading">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div id="divFormParent" style="display: none;">
+    <form>
+      <h1>
+        <span>Login </span>
+      </h1>
+      <button id="loginGoogleButton">Entrar com Google</button>
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Senha">
+      <button id='loginEmailButton'>Entrar</button>
+      <p><a href="#">Esqueceu sua senha?</a></p>
+      <p><a href="registro.html">Não tem uma conta? Registre-se</a></p>
+    </form>
+  </div>
+</body>
+
+</html>
